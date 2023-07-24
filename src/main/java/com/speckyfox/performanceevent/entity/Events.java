@@ -1,13 +1,11 @@
 package com.speckyfox.performanceevent.entity;
 
-import jakarta.persistence.Entity;
+
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
-
-import javax.persistence.*;
-import javax.persistence.Id;
 
 @Entity
 @Getter
@@ -16,16 +14,17 @@ import javax.persistence.Id;
 @RequiredArgsConstructor
 @Table(name = "events")
 public class Events {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private int id;
-
-    @Column(name = "name", nullable = false)
-    private String name;
-
-    @Column(name = "description", nullable = false)
+    @Column(name = "event_id")
+    private Long id;
+    @Column(name = "title", nullable = false)
+    private String title;
     private String description;
+    private String date;
+    private String time;
+    private String speakerName;
+    private String speakerDesigntion;
+    private String meetingUrl;
 
 }
