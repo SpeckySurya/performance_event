@@ -1,4 +1,4 @@
-package com.speckyfox.performanceevent.Exception;
+package com.speckyfox.performanceevent.exception;
 
 public class CustomException extends RuntimeException{
 }
