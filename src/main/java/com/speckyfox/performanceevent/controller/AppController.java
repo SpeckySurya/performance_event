@@ -13,11 +13,11 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/app")
-public class FrontController {
+public class AppController {
 
     private final FrontDomainService frontDomainService;
 
-    public FrontController(FrontDomainService frontDomainService) {
+    public AppController(FrontDomainService frontDomainService) {
         this.frontDomainService = frontDomainService;
     }
 
@@ -30,6 +30,7 @@ public class FrontController {
      */
     @GetMapping("/event/{id}")
     @Operation(summary = "Get event by id")
+    @CrossOrigin
     @ApiResponses(
             value = {
                     @ApiResponse(responseCode = "200", description = "Successfully retrieve the result"),
@@ -48,6 +49,7 @@ public class FrontController {
      * @return Boolean
      */
     @PostMapping("/register")
+    @CrossOrigin
     @Operation(summary = "Register user for event")
     @ApiResponses(
             value = {
@@ -62,5 +64,23 @@ public class FrontController {
     }
 
 
+    @GetMapping("/getByEventName/{name}")
+    @CrossOrigin
+    @Operation(summary = "Get Event By Name")
+    @ApiResponses(
+            value = {
+                    @ApiResponse(responseCode = "200", description = "Successfully retrieve the result"),
+                    @ApiResponse(responseCode = "400", description = "Bad Request"),
+                    @ApiResponse(responseCode = "500", description = "Internal Server Error")
+            }
+    )
+    public ResponseEntity<Events> getByEventName(@PathVariable("name") String name) {
+        return new ResponseEntity<>(frontDomainService.getByEventName(name), HttpStatus.OK);
+    }
 
+
+    @GetMapping("/send-mail")
+    public ResponseEntity<Boolean> sendEmail(){
+        return new ResponseEntity<>(frontDomainService.sendEmail(), HttpStatus.OK);
+    }
 }

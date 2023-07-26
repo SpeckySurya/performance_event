@@ -4,7 +4,16 @@ import com.speckyfox.performanceevent.entity.Events;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-@Repository
-public interface EventsRepository extends JpaRepository<Events, Integer> {
+import java.util.Optional;
 
+@Repository
+public interface EventsRepository extends JpaRepository<Events, Long> {
+
+    /**
+     * Find event by title
+     *
+     * @param name String
+     * @return Optional of event
+     */
+    Optional<Events> findEventByTitle(String name);
 }

@@ -13,10 +13,12 @@ public interface EventsService {
 
 	Events save(EventsRequests eventsRequests);
 
-	Events update(Events events);
+	Events update(Integer eventId, EventsRequests eventsRequests);
 
 	Events findById(Integer eventId);
 
 	void deleteById(Integer eventId);
+
+	Events getByName(String name);
 
 }

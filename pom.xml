@@ -8,11 +8,13 @@
 		<version>3.0.10-SNAPSHOT</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.speckyfox</groupId>
-	<artifactId>performance-event</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>performance-event</name>
-	<description>Event Registration </description>
+
+		<groupId>com.speckyfox</groupId>
+		<artifactId>performance-event</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+		<name>performance-event</name>
+		<description>Event Registration </description>
+
 	<properties>
 		<java.version>17</java.version>
 	</properties>
@@ -34,10 +36,15 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-validation</artifactId>
 		</dependency>
-<!--		<dependency>-->
-<!--			<groupId>org.springframework.boot</groupId>-->
-<!--			<artifactId>spring-boot-starter-security</artifactId>-->
-<!--		</dependency>-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
@@ -48,9 +55,31 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-mail</artifactId>
+		</dependency>
+		<!-- Swagger doc -->
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+			<version>2.1.0</version>
+		</dependency>
+		<!--- Calender invites -->
+		<dependency>
+			<groupId>net.sf.biweekly</groupId>
+			<artifactId>biweekly</artifactId>
+			<version>0.6.6</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
+		<finalName>event-application</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
