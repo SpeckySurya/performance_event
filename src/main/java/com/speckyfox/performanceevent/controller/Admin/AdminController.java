@@ -2,8 +2,6 @@ package com.speckyfox.performanceevent.controller.Admin;
 
 import com.speckyfox.performanceevent.dto.AdminLoginRequest;
 import com.speckyfox.performanceevent.dto.EventsRequests;
-import com.speckyfox.performanceevent.dto.UserEmailNotificationRequest;
-import com.speckyfox.performanceevent.dto.UsersRequest;
 import com.speckyfox.performanceevent.entity.Events;
 import com.speckyfox.performanceevent.entity.Users;
 import com.speckyfox.performanceevent.service.EventsService;
@@ -17,10 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
 

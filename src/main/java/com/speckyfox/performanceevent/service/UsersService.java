@@ -1,6 +1,5 @@
 package com.speckyfox.performanceevent.service;
 
-import com.speckyfox.performanceevent.dto.AdminLoginRequest;
 import com.speckyfox.performanceevent.entity.Users;
 
 import java.util.List;
